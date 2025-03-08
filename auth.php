@@ -1,8 +1,8 @@
 <?php
-    $server = 'localhost';
-    $login = 'root';
-    $mdp = '';
-    $db = 'r401_api';
+    $server = 'sql307.infinityfree.com';
+    $login = 'if0_38457290';
+    $mdp = '9ydXrkB6sn';
+    $db = 'if0_38457290_authapi';
     try {
         // Connexion au serveur MySQL
         $linkpdo = new PDO("mysql:host=$server;dbname=$db;charset=utf8mb4", $login, $mdp);
