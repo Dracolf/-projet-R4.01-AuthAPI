@@ -41,9 +41,6 @@
                         $jwt = generate_jwt($headers, $payload, $secret_key);
 
                         echo json_encode(['token' => $jwt,'user' => $user['Login']]);
-                        $_SESSION['user'] = $user['Login'];
-                        header("Location: http://gestionvolley.great-site.net/index.php");
-                        exit;
                     } else {
                         http_response_code(401);
                         echo json_encode(['error' => 'Identifiants invalides']);
