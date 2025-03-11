@@ -1,8 +1,8 @@
 <?php
-    $server = 'sql307.infinityfree.com';
-    $login = 'if0_38457290';
-    $mdp = '9ydXrkB6sn';
-    $db = 'if0_38457290_authapi';
+    $server = 'mysql-volleycoachpro.alwaysdata.net';
+    $login = '403542';
+    $mdp = 'Iutinfo!';
+    $db = 'volleycoachpro_auth';
     try {
         // Connexion au serveur MySQL
         $linkpdo = new PDO("mysql:host=$server;dbname=$db;charset=utf8mb4", $login, $mdp);
