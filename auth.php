@@ -58,7 +58,16 @@
             $token = get_bearer_token();
 
             if ($token && is_jwt_valid($token, $secret_key)) {
-                echo json_encode(['message' => 'Accès autorisé', 'data' => 'Voici vos données sécurisées']);
+                // Décoder le token pour obtenir le login
+                $parts = explode('.', $token);
+                $payload = json_decode(base64_decode($parts[1]), true);
+                $userLogin = $payload['login'];
+                
+                echo json_encode([
+                    'message' => 'Accès autorisé',
+                    'login' => $userLogin,
+                    'status' => 'success'
+                ]);
             } else {
                 http_response_code(403);
                 echo json_encode(['error' => 'Accès refusé']);
